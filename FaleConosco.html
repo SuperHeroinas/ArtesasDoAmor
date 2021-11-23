@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artesãs do Amor</title>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');</style>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+</head>
+<body>
+
+    <div class="cabecalho">
+        <div class="logocabecalho">
+            <a href="Index.html"><img src="imagens/logo/escritocortado.png" alt="Logo"></a>
+        </div>
+    
+        <div id="busca">
+            <input type="text" id="txtbusca" placeholder="Buscar..."/>
+            <img src="imagens/lupa.png" id="btnbusca" alt="Buscar"/>
+        </div>
+    
+        <div class="conta">
+            <a href="conta.html"><img src="imagens/contas.png" alt=""> </a>
+            <a href="sacola.html"><img src="imagens/sacola.png" alt=""> </a>
+        </div>
+    </div>
+            <hr>
+        <div class="menu">
+            <a href="Novidades.html">NOVIDADES</a>
+            <a href="LaçoseTiaras.html">LAÇOS/TIARAS</a>
+            <a href="Cadernos.html">CADERNOS</a>                <a href="KitsPersonalizados.html">KITS PERSONALIZADOS</a>
+            <a href="FaleConosco.html">FALE CONOSCO</a>
+            <a href="Sobre.html">SOBRE</a>
+        </div>
+    
+    <nav id="localizacao">
+        <ul>
+            <li><a href="Index.html">Início</a></li>
+            <li> > </li>
+            <li><a href="FaleConosco.html.html">Fale Conosco</a></li>
+        </ul>
+    </nav>
+
+    <div class="dividida">
+
+ <h1 class="contato">CONTATO</h1>
+    <hr>
+</div>
+
+ <div class="formulario">
+    <div class="wrapper">
+        <h2>Fale Conosco</h2>
+        <div id="error_message"></div>
+        <form action="" id="myform" onsubmit = "return validate();">
+          <div class="input_field">
+              <input type="text" placeholder="Juliana" id="nome">
+          </div>
+          <div class="input_field">
+              <input type="text" placeholder="Paes" id="sobrenome">
+          </div>
+          <div class="input_field">
+              <input type="text" placeholder="16998745210" id="telefone">
+          </div>
+          <div class="input_field">
+              <input type="text" placeholder="julianapaes@hotmail.com" id="email">
+          </div>
+          <div class="input_field">
+              <textarea placeholder="Mensagem com no minímo 40 cáracteres" id="mensagem"></textarea>
+          </div>
+          <div class="btn">
+              <input type="submit">
+          </div>
+        </form>
+      </div>
+      <div class="infomapa">
+        <h3>FORMAS DE CONTATO</h3>
+        <p>Qualquer dúvida entre em contato pelo whatsapp (16) 95786-7895</p>
+        <p>
+            <img src="imagens/email.png" alt="">
+            artesasdoamor@hotmail.com
+        </p>
+        <p>
+            <img src="imagens/localização.png" alt="">
+            Av. Itamaracá, 585 - Portal Itamaracá, Taquaritinga - SP
+        </p>
+      </div>
+    </div>
+
+    
+        <div id="map"></div> 
+                <script>
+                    var map = L.map('map', {
+                        center: [-21.430106, -48.515308],
+                        zoom: 10
+                    });
+                     
+                    var tiles = new L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                      minZoom: '15'}).addTo(map);
+                    
+                    var marker = L.marker(
+                      [-21.430106, -48.515308],
+                      { 
+                        draggable: true,
+                        title: "",
+                        opacity: 0.75
+                    });
+                    
+                    marker.addTo(map).bindPopup("<p1><b>Artesãs do Amor</p1>") .openPopup();
+                </script>
+        </div>
+         
+    <div class="rodape">
+        
+        <div class="faleconosco">
+            <h1> Fale Conosco</h1>
+            <img src="imagens/whatsapp-logo-1.png" alt="whatsapp"> <span>+55 (16) 95786-7895 </span><br>
+            <img src="imagens/instagram.png" alt="instagram"><span>@artesasdoamor </span><br>
+            <img src="imagens/facebook.png" alt="facebook"><span>Artesãs do Amor</span><br>
+        </div>
+
+        <div class="minhaconta">
+            <h1> Minha Conta</h1>
+            <p>Meus Pedidos</p>
+            <p>Cupons</p>
+            <p>Atendimento</p>
+        </div>
+
+        <div class="pagamentos">
+            <h1> Formas de pagamentos</h1>
+            <img src="imagens/boleto.png" alt="whatsapp"> <span>Boleto</span><br>
+            <img src="imagens/cartao.png" alt="instagram"><span>Cartão </span><br>
+            <img src="imagens/pix.png" alt="facebook"><span>Pix</span><br> 
+        </div>
+
+        <div class="logo">
+            <img src="imagens/logo/semfundo.png" alt="logocompleto">           
+        </div>
+</div>
+</body>
+</html>
